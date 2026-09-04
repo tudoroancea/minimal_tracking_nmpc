@@ -131,13 +131,24 @@ class NMPCController:
         "expand": True,
         "ipopt": {"sb": "yes", "print_level": 0, "max_resto_iter": 0},
       }
-    else:  # fatrop
+    elif solver == "fatrop":
       options = {
         "print_time": 0,
         "debug": True,
         "expand": True,
         "structure_detection": "auto",
         "fatrop": {"print_level": 0},
+      }
+    else:
+      options = {
+        "expand": True,
+        "qpsol": "osqp",
+        "print_time": 0,
+        "print_header": False,
+        "print_iteration": False,
+        "print_status": False,
+        "max_iter": 1,
+        "qpsol_options": {"osqp": {"verbose": False}},
       }
     options.update({"jit": jit, "jit_options": {"flags": ["-O3 -march=native"], "verbose": False}})
     opti.solver(solver, options)

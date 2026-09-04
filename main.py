@@ -59,7 +59,7 @@ def main():
   sub = parser.add_subparsers(dest="command", required=True)
 
   p_run = sub.add_parser("run", help="Run closed-loop simulation")
-  p_run.add_argument("--solver", default="ipopt", choices=["ipopt", "fatrop"])
+  p_run.add_argument("--solver", default="ipopt", choices=["ipopt", "fatrop", "sqpmethod"])
   p_run.add_argument("--jit", action="store_true")
   p_run.add_argument("--track", default="fsds_competition_1")
   p_run.add_argument("--vref", type=float, default=5.0)
