@@ -13,6 +13,6 @@ T_max = 500.0
 delta_max = 0.5
 # general OCP parameters
 Nf = 40  # horizon size
-nx = 4   # state dimension
-nu = 2   # control dimension
+nx = 4  # state dimension
+nu = 2  # control dimension
 dt = 1 / 20  # sampling time
